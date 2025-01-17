@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA Study Portal - H.D. Jain College</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background);
+            color: var(--text);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            background-color: var(--card);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .about-section {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .faculty-card {
+            background-color: var(--background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .semester-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .semester-card {
+            background-color: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .semester-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .semester-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .subject-list {
+            list-style: none;
+        }
+
+        .subject-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: var(--background);
+            border-radius: 8px;
+        }
+
+        .subject-list h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .links-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .links-group a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background-color: var(--card);
+            transition: all 0.3s ease;
+        }
+
+        .links-group a:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .syllabus-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .syllabus-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .semester-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero-content">
+            <h1>BCA Study Portal</h1>
+            <p>H.D. Jain College, Ara</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#faculty">Faculty</a>
+            <a href="#semester1">Sem 1</a>
+            <a href="#semester2">Sem 2</a>
+            <a href="#semester3">Sem 3</a>
+            <a href="#semester4">Sem 4</a>
+            <a href="#semester5">Sem 5</a>
+            <a href="#semester6">Sem 6</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <h2>About BCA Program</h2>
+            <p>The Bachelor of Computer Applications (BCA) program at H.D. Jain College was established in 2005. It is a three-year undergraduate program designed to create professional software developers and prepare students for higher studies in computer science.</p>
+            
+            <h3 style="margin-top: 1.5rem">Principal's Message</h3>
+            <div style="margin-top: 1rem">
+                <h4>Dr. Rajesh Kumar</h4>
+                <p>Welcome to the BCA department of H.D. Jain College. Our program focuses on providing quality education in computer applications with a perfect blend of theoretical and practical knowledge.</p>
+            </div>
+        </section>
+
+        <section id="faculty" class="about-section">
+            <h2>Our Faculty</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <h3>Dr. Amit Kumar</h3>
+                    <p>HOD, BCA Department</p>
+                    <p>Ph.D. in Computer Science</p>
+                    <p>Specialization: Data Structures, Java Programming</p>
+                </div>
+                <div class="faculty-card">
+                    <h3>Prof. Priya Singh</h3>
+                    <p>Assistant Professor</p>
+                    <p>M.Tech in Computer Science</p>
+                    <p>Specialization: Database Management, Web Technologies</p>
+                </div>
+                <div class="faculty-card">
+                    <h3>Prof. Rahul Sharma</h3>
+                    <p>Assistant Professor</p>
+                    <p>M.Tech in Information Technology</p>
+                    <p>Specialization: Networking, Operating Systems</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="semester-grid">
+            <!-- Semester 1 -->
+            <div class="semester-card" id="semester1">
+                <h2>Semester 1</h2>
+                <ul class="subject-list">
+                    <li>
+                        <h3>Computer Fundamentals</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Programming in C</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Mathematics</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="syllabus-btn">Download Syllabus</a>
+            </div>
+
+            <!-- Semester 2 -->
+            <div class="semester-card" id="semester2">
+                <h2>Semester 2</h2>
+                <ul class="subject-list">
+                    <li>
+                        <h3>Digital Electronics</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Data Structures</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Operating Systems</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="syllabus-btn">Download Syllabus</a>
+            </div>
+
+            <!-- Semester 3 -->
+            <div class="semester-card" id="semester3">
+                <h2>Semester 3</h2>
+                <ul class="subject-list">
+                    <li>
+                        <h3>Object Oriented Programming</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Database Management Systems</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Computer Networks</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="syllabus-btn">Download Syllabus</a>
+            </div>
+
+            <!-- Semester 4 -->
+            <div class="semester-card" id="semester4">
+                <h2>Semester 4</h2>
+                <ul class="subject-list">
+                    <li>
+                        <h3>Software Engineering</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Web Technologies</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Java Programming</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="syllabus-btn">Download Syllabus</a>
+            </div>
+
+            <!-- Semester 5 -->
+            <div class="semester-card" id="semester5">
+                <h2>Semester 5</h2>
+                <ul class="subject-list">
+                    <li>
+                        <h3>Python Programming</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Data Mining</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Artificial Intelligence</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#" class="syllabus-btn">Download Syllabus</a>
+            </div>
+
+            <!-- Semester 6 -->
+            <div class="semester-card" id="semester6">
+                <h2>Semester 6</h2>
+                <ul class="subject-list">
+                    <li>
+                        <h3>Cloud Computing</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Mobile Application Development</h3>
+                        <div class="links-group">
+                            <a href="#">Study Materials</a>
+                            <a href="#">Notes</a>
+                            <a href="#">Previous Papers</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Project Work</h3>
+                        <div class="links-group">
+                            <a href="#">Guidelines</a>
