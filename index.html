@@ -149,7 +149,13 @@
                     }),
                 });
 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
                 const data = await response.json();
+
+                console.log("API Response:", data); // Log the entire API response
 
                 if (!data || !data.candidates || data.candidates.length === 0 || !data.candidates[0].content || !data.candidates[0].content.parts || data.candidates[0].content.parts.length === 0) {
                     throw new Error("Invalid API response structure.");
@@ -164,6 +170,8 @@
                     throw new Error("Failed to parse API response as JSON.");
                 }
 
+                console.log("Parsed Quiz Data:", quizData); // Log the parsed quiz data
+
                 if (!quizData || !quizData.questions || !Array.isArray(quizData.questions)) {
                     throw new Error("Invalid quiz data structure.");
                 }
@@ -176,6 +184,7 @@
         });
 
         function displayQuiz(quizData) {
+            // ... (Your existing displayQuiz and checkAnswer functions) ...
             const quizContainer = document.getElementById('quiz-container');
             quizContainer.innerHTML = '';
             quizContainer.classList.remove('hidden');
@@ -209,14 +218,3 @@
             if (selectedAnswer === correctAnswer) {
                 button.classList.add('correct');
             } else {
-                button.classList.add('incorrect');
-                allButtons.forEach(btn => {
-                    if (btn.textContent === correctAnswer) {
-                        btn.classList.add('correct');
-                    }
-                });
-            }
-        }
-    </script>
-</body>
-</html>
